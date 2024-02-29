@@ -33,7 +33,10 @@ while game_is_on:
         print("nom nom nom")
         food.refresh()
         snake.extend()
+        ScoreBoard.increase_score()
         ScoreBoard.update_scoreboard()
+        
+        
     
 
 screen.exitonclick()
