@@ -17,10 +17,10 @@ food = Food()
 ## listen button
 
 screen.listen()
-screen.onkey(snake.up, 'w')
-screen.onkey(snake.down, 's')
-screen.onkey(snake.left, 'a')
-screen.onkey(snake.right, 'd')
+screen.onkey(snake.up, 'Up')
+screen.onkey(snake.down, 'Down')
+screen.onkey(snake.left, 'Left')
+screen.onkey(snake.right, 'Right')
 
 
 game_is_on = True
@@ -37,10 +37,16 @@ while game_is_on:
         ScoreBoard.update_scoreboard()
         
 ## detect collision with wall
-
-    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
+ 
+    if snake.head.xcor() > 295 or snake.head.xcor() < -295 or snake.head.ycor() > 295 or snake.head.ycor() < -295:
         game_is_on = False
         ScoreBoard.game_over()
     
+## detect collision with tail
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 15:
+            game_is_on = False
+            ScoreBoard.game_over()
+
 
 screen.exitonclick()
