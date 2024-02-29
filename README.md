@@ -20,3 +20,4 @@ This game requires Python and the Turtle module. Could you make sure you have th
 
 
 
+![image](https://github.com/MRH-Romit/Snake-game/assets/125377720/5c661a74-7550-4347-9610-ba72f3ed5d2a)
